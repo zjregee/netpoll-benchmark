@@ -11,4 +11,4 @@ go build -v -o output/bin/netpoll_bencher ./netpoll/client
 go build -v -o output/bin/net_reciever ./net
 go build -v -o output/bin/netpoll_reciever ./netpoll
 go build -v -o output/bin/gnet_reciever ./gnet
-go build -v -o output/bin/evio_reciever ./evio
+go build -v -o output/bin/anet_reciever ./anet

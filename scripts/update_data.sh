@@ -6,9 +6,9 @@ function to_csv() {
 
 endpoint=("server" "client")
 
-for ((j = 0; j < ${#endpoint[@]}; j++)); do
+for ((j = 0; j < 1; j++)); do
   ep=${endpoint[j]}
-  for ((i = 1; i <= 3; i++)); do
+  for ((i = 1; i <= 1; i++)); do
     filename="${ep}${i}"
     # benchmark
     echo "./scripts/benchmark_${ep}.sh ${i} > ${filename}.log"

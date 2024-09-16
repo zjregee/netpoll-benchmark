@@ -37,7 +37,7 @@ function benchmark() {
         if [[ "$1" == "client" ]]; then
           svr="net_reciever"
         fi
-        nohup $scpu_cmd ./output/bin/${svr} -addr="$addr" -mode=$mode >>output/log/nohup.log 2>&1 &
+        nohup ./output/bin/${svr} -addr="$addr" -mode=$mode >>output/log/nohup.log 2>&1 &
         sleep 1
         echo "server $svr running with $scpu_cmd"
 
@@ -47,7 +47,7 @@ function benchmark() {
           cli="net_bencher"
         fi
         echo "client $cli running with $ccpu_cmd"
-        $ccpu_cmd ./output/bin/${cli} -name="$rp" -addr="$addr" -mode=$mode -b=$b -c=$c -n=$n
+        ./output/bin/${cli} -name="$rp" -addr="$addr" -mode=$mode -b=$b -c=$c -n=$n
 
         # stop server
         pid=$(ps -ef | grep $svr | grep -v grep | awk '{print $2}')
